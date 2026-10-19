@@ -1,16 +1,12 @@
 "use client";
 import Link from "next/link";
-import { Brush, Building2, HardHat, Home, PackageOpen, Sparkles, Store } from "lucide-react";
+import { Building2, Bug, Droplets, HardHat, Home, Hotel, Leaf, PackageOpen, PartyPopper, Shirt } from "lucide-react";
+import { serviceCatalog } from "@/lib/service-catalog";
 
-const services = [
-  { icon: Home, title: "Residential Cleaning", desc: "Regular upkeep for houses and apartments: floors, kitchens, bathrooms and every surface in between." },
-  { icon: Sparkles, title: "Deep Cleaning", desc: "A thorough top-to-bottom clean that tackles grease, grout, limescale and the corners that get missed." },
-  { icon: Building2, title: "Office Cleaning", desc: "Spotless workspaces, meeting rooms and restrooms, scheduled around your working hours." },
-  { icon: PackageOpen, title: "Move-in / Move-out", desc: "Hand a property back in perfect condition, or start fresh in a new one before you unpack." },
-  { icon: HardHat, title: "Post-Construction", desc: "Dust, paint and cement residue removed so your new or renovated space is ready to use." },
-  { icon: Store, title: "Commercial Cleaning", desc: "Restaurants, shops, clinics and event venues, cleaned to the standard your customers expect." },
-];
-void Brush;
+const icons = [Home, PackageOpen, HardHat, Building2, Shirt, Bug, Hotel, PartyPopper, Leaf, Droplets];
+const services = serviceCatalog.map((service, index) => ({
+  icon: icons[index], title: service.name, desc: service.description,
+}));
 
 interface BubbleProps {
   size: string;
@@ -102,7 +98,7 @@ export default function ServiceSection() {
 
         {/* Section Heading */}
         <div className="text-center text-white mb-20">
-          <p className="text-brand-100 tracking-widest mb-3 flex items-center justify-center gap-2 text-sm uppercase font-semibold">
+          <p className="text-brand-yellow tracking-widest mb-3 flex items-center justify-center gap-2 text-sm uppercase font-semibold">
             What we do
           </p>
 
@@ -116,7 +112,7 @@ export default function ServiceSection() {
           {services.map((svc) => (
             <div key={svc.title} className="group bg-white rounded-2xl shadow-xl p-8 pt-0 text-center relative transition-transform duration-300 hover:-translate-y-1">
               <div className="w-28 h-28 mx-auto -mt-14 rounded-full border-[6px] border-primary flex items-center justify-center bg-white shadow-lg">
-                <svc.icon className="w-12 h-12 text-brand" strokeWidth={1.75} />
+                <svc.icon className="w-12 h-12 text-brand-teal" strokeWidth={1.75} />
               </div>
               <h3 className="text-2xl font-bold mt-6 mb-3 text-primary">{svc.title}</h3>
               <p className="text-gray-600 leading-relaxed mb-6">{svc.desc}</p>

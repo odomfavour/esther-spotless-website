@@ -62,6 +62,7 @@ export default function StaffInspectionDetail() {
   });
 
   const [photos, setPhotos] = useState<UploadedFile[]>([]);
+  const [uploadingPhotos, setUploadingPhotos] = useState(false);
   const [touched, setTouched] = useState(false);
 
   useEffect(() => {
@@ -138,6 +139,7 @@ export default function StaffInspectionDetail() {
   };
 
   const saveReport = async () => {
+    if (uploadingPhotos) { toast.error("Please wait for your attachments to finish uploading."); return; }
     if (!inspection) return;
 
     if (!form.condition.trim() || !form.size.trim() || !form.duration.trim()) {
@@ -157,7 +159,6 @@ export default function StaffInspectionDetail() {
           specialRequirements: form.specialRequirements.trim(),
           notes: form.notes.trim(),
 
-          // These should eventually be permanent uploaded URLs.
           photos: photos.map((photo) => photo.url),
         },
       });
@@ -171,6 +172,7 @@ export default function StaffInspectionDetail() {
   };
 
   const complete = async () => {
+    if (uploadingPhotos) { toast.error("Please wait for your attachments to finish uploading."); return; }
     setTouched(true);
 
     if (!form.condition || !form.size || !form.duration) {
@@ -262,14 +264,14 @@ export default function StaffInspectionDetail() {
 
                 <div>
                   <p className="mb-2 text-xs font-medium text-muted-foreground">
-                    Photos ({report?.photos.length})
+                    Photos and videos ({report?.photos.length})
                   </p>
 
                   {report?.photos.length ? (
                     <PhotoGrid photos={report?.photos} alt="Inspection photo" />
                   ) : (
                     <p className="text-sm text-muted-foreground">
-                      No inspection photos.
+                      No inspection photos or videos.
                     </p>
                   )}
                 </div>
@@ -352,9 +354,10 @@ export default function StaffInspectionDetail() {
                   />
 
                   <FileUploader
-                    label="Inspection photos"
+                    label="Inspection photos and videos"
                     value={photos}
                     onChange={setPhotos}
+                    onUploadingChange={setUploadingPhotos}
                     max={8}
                     compact
                   />

@@ -39,17 +39,17 @@ const AboutSection = () => {
             </div>
           </div>
           <div className="min-w-0 py-8 lg:px-8 flex flex-col justify-center">
-            <h4 className="font-bold mb-4 uppercase text-primary ">
+            <h4 className="font-bold mb-4 uppercase text-[#007486] ">
               <span className="mr-2">
                 <Sparkles className="inline w-5 h-5 text-primary " />
               </span>
-              About Cleanin
+              About Esther’s Spotless Touch
             </h4>
             <h2 className="text-3xl sm:text-4xl capitalize font-bold mb-4">
               Professional Cleaning, Handled From Start To Finish
             </h2>
             <p className="mb-4">
-              Cleanin is a professional cleaning company serving homes, offices and commercial spaces. Our trained teams bring their own equipment and take care of every detail.
+              Esther’s Spotless Touch is a professional cleaning company serving homes, offices and commercial spaces. Our trained teams bring their own equipment and take care of every detail.
             </p>
             <p>
               Every job begins with a clear quotation tailored to your space, so you know exactly what to expect before you commit.
@@ -64,10 +64,10 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">
-                    Commercial Cleaning
+                    Office Cleaning
                   </h3>
                   <p className="mt-2 text-gray-600">
-                    We offer comprehensive commercial cleaning services to keep
+                    We offer office cleaning services to keep
                     your workspace pristine and professional.
                   </p>
                 </div>
@@ -80,7 +80,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">
-                    Residential Cleaning
+                    General Space Cleaning
                   </h3>
                   <p className="mt-2 text-gray-600">
                     Professional home cleaning services that make your living

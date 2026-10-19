@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Star } from "lucide-react";
 import { cn, initials } from "@/lib/utils";
 import { Avatar as ShadcnAvatar, AvatarFallback } from "@/components/ui/avatar";
@@ -30,12 +31,10 @@ export function Stars({ value, onChange, size = 18 }: { value: number; onChange?
 export function Logo({ light, className }: { light?: boolean; className?: string }) {
   return (
     <span className={cn("inline-flex shrink-0 items-center gap-2.5 whitespace-nowrap", className)}>
-      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand">
-        <svg className="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><circle cx="12" cy="12" r="2" fill="#0a3d5c" /></svg>
-      </span>
+      <Image src="/brand/logo-mark.png" alt="" width={44} height={44} className="h-11 w-11 shrink-0 rounded-full bg-white object-contain" />
       <span className="leading-tight">
-        <span className={cn("block text-xl font-bold", light ? "text-white" : "text-foreground")}>Cleanin</span>
-        <span className={cn("block text-[11px]", light ? "text-brand-100" : "text-brand")}>Cleaning Services</span>
+        <span className={cn("block text-xl font-bold", light ? "text-white" : "text-foreground")}>Esther’s</span>
+        <span className={cn("block text-[11px]", light ? "text-brand-100" : "text-brand")}>SPOTLESS TOUCH</span>
       </span>
     </span>
   );

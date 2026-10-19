@@ -170,7 +170,7 @@ export function QuoteDocument({
           <p className="mt-3 max-w-xs text-sm text-muted-foreground">
             {org.address}
             <br />
-            {org.phone} · {org.email}
+            {org.phone}{org.email ? ` · ${org.email}` : ""}
           </p>
         </div>
         <div className="sm:text-right">

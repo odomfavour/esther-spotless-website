@@ -188,7 +188,7 @@ id="contact"       className="relative py-12 px-4 sm:py-20 sm:px-6 bg-cover bg-c
               {/* Submit Button */}
               <Button
                 onClick={handleSubmit}
-                className="h-auto gap-3 w-full sm:w-auto px-6 sm:px-10 py-4 font-bold hover:bg-brand-700"
+                className="h-auto gap-3 w-full sm:w-auto px-6 sm:px-10 py-4 font-bold bg-brand-yellow text-brand hover:bg-brand-yellow/90"
               >
                 SEND US MESSAGE
                 <svg
@@ -213,7 +213,7 @@ id="contact"       className="relative py-12 px-4 sm:py-20 sm:px-6 bg-cover bg-c
             </div>
 
             {/* Right Side - Contact Info */}
-            <div className="bg-brand text-white min-w-0 p-5 sm:p-8 xl:p-12 flex flex-col justify-center">
+            <div className="bg-[#007486] text-white min-w-0 p-5 sm:p-8 xl:p-12 flex flex-col justify-center">
               <h3 className="text-3xl font-bold mb-10">Contact Info</h3>
 
               <div className="space-y-8">
@@ -242,9 +242,9 @@ id="contact"       className="relative py-12 px-4 sm:py-20 sm:px-6 bg-cover bg-c
                   </div>
                   <div>
                     <p className="font-semibold mb-1">
-                      14 Trans-Amadi Road
+                      Uyo
                     </p>
-                    <p className="text-white/70 text-sm">Port Harcourt, Rivers State</p>
+                    <p className="text-white/70 text-sm">Uyo, Akwa Ibom State</p>
                   </div>
                 </div>
 
@@ -266,8 +266,8 @@ id="contact"       className="relative py-12 px-4 sm:py-20 sm:px-6 bg-cover bg-c
                     </svg>
                   </div>
                   <div>
-                    <p className="font-semibold mb-1">+817 895 74555</p>
-                    <p className="text-white/70 text-sm">+817 895 74555</p>
+                    <a href="tel:+2348147343027" className="font-semibold mb-1 block">08147343027</a>
+                    <p className="text-white/70 text-sm">Open every day</p>
                   </div>
                 </div>
 
@@ -289,9 +289,9 @@ id="contact"       className="relative py-12 px-4 sm:py-20 sm:px-6 bg-cover bg-c
                     </svg>
                   </div>
                   <div>
-                    <p className="font-semibold mb-1">hello@cleanin.ng</p>
+                    <p className="font-semibold mb-1"><a href="https://wa.me/2348147343027">Chat on WhatsApp</a></p>
                     <p className="text-white/70 text-sm">
-                      hello@cleanin.ng
+                      <a href="tel:+2348147343027">08147343027</a>
                     </p>
                   </div>
                 </div>

@@ -41,7 +41,7 @@ export default function TeamSection() {
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-brand font-semibold mb-3 flex items-center justify-center gap-2 text-sm uppercase tracking-wide">
+          <p className="text-[#007486] font-semibold mb-3 flex items-center justify-center gap-2 text-sm uppercase tracking-wide">
             <span>👥</span> We&apos;ve Awesome Team Members
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight">

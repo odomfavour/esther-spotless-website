@@ -34,6 +34,7 @@ export default function ReviewPage() {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
   const [photos, setPhotos] = useState<UploadedFile[]>([]);
+  const [uploadingPhotos, setUploadingPhotos] = useState(false);
   const [touched, setTouched] = useState(false);
   const [done, setDone] = useState(false);
   const bookingQuery = useQuery({
@@ -139,9 +140,10 @@ export default function ReviewPage() {
             hint={`${comment.length}/5000`}
           />
           <FileUploader
-            label="Add photos (optional)"
+            label="Add photos or videos (optional)"
             value={photos}
             onChange={setPhotos}
+                    onUploadingChange={setUploadingPhotos}
             max={4}
             compact
           />
@@ -149,9 +151,10 @@ export default function ReviewPage() {
             size="lg"
             full
             loading={reviewMutation.isPending}
+            disabled={uploadingPhotos}
             onClick={() => {
               setTouched(true);
-              if (rating) reviewMutation.mutate();
+              if (rating && !uploadingPhotos) reviewMutation.mutate();
             }}
           >
             Submit review

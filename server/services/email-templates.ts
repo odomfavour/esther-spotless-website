@@ -22,22 +22,22 @@ function message(subject: string, paragraphs: string[], link?: string, label = "
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#eef5f9;">
     <tr><td align="center" style="padding:32px 16px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background-color:#ffffff;border:1px solid #d9e8f1;border-radius:16px;overflow:hidden;">
-        <tr><td bgcolor="#0a3d5c" style="padding:28px 24px;background-color:#0a3d5c;border-radius:16px 16px 0 0;">
-          <p style="margin:0;color:#ffffff;font-size:28px;line-height:34px;font-weight:700;letter-spacing:-1px;">Cleanin<span style="color:#a8d8ee;">.</span></p>
+        <tr><td bgcolor="#0b3678" style="padding:28px 24px;background-color:#0b3678;border-radius:16px 16px 0 0;">
+          <p style="margin:0;color:#ffffff;font-size:28px;line-height:34px;font-weight:700;letter-spacing:-1px;">Esther’s Spotless Touch<span style="color:#a8d8ee;">.</span></p>
           <p style="margin:6px 0 0;color:#d9e8f1;font-size:12px;line-height:18px;letter-spacing:2px;text-transform:uppercase;">Professional cleaning services</p>
         </td></tr>
         <tr><td style="padding:32px 24px;">
-          <h1 style="margin:0 0 24px;color:#0a3d5c;font-size:26px;line-height:34px;font-weight:700;overflow-wrap:anywhere;">${escapeHtml(subject)}</h1>
+          <h1 style="margin:0 0 24px;color:#0b3678;font-size:26px;line-height:34px;font-weight:700;overflow-wrap:anywhere;">${escapeHtml(subject)}</h1>
           ${paragraphs.map((paragraph) => `<p style="margin:0 0 16px;font-size:16px;line-height:26px;overflow-wrap:anywhere;">${escapeHtml(paragraph)}</p>`).join("")}
-          ${highlight ? `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:24px 0;background-color:#eef5f9;border:1px solid #d9e8f1;border-radius:10px;"><tr><td align="${highlight.code ? "center" : "left"}" style="padding:20px;"><p style="margin:0 0 8px;color:#526879;font-size:12px;line-height:18px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">${escapeHtml(highlight.label)}</p><p style="margin:0;color:#0a3d5c;font-size:${highlight.code ? "32" : "24"}px;line-height:40px;font-weight:700;${highlight.code ? "font-family:Consolas,monospace;letter-spacing:4px;" : ""}overflow-wrap:anywhere;">${escapeHtml(highlight.value)}</p></td></tr></table>` : ""}
-          ${link ? `<table role="presentation" cellpadding="0" cellspacing="0" style="margin:28px 0 24px;"><tr><td align="center" bgcolor="#0a3d5c" style="border-radius:8px;background-color:#0a3d5c;mso-padding-alt:14px 24px;"><a href="${escapeHtml(link)}" style="display:inline-block;padding:14px 24px;border:1px solid #0a3d5c;border-radius:8px;color:#ffffff;font-size:16px;line-height:22px;font-weight:700;text-decoration:none;">${escapeHtml(label)}</a></td></tr></table><p style="margin:0;color:#64748b;font-size:12px;line-height:20px;">Button not working? Copy this link into your browser:</p><p style="margin:6px 0 0;font-size:12px;line-height:20px;word-break:break-all;overflow-wrap:anywhere;"><a href="${escapeHtml(link)}" style="color:#0a3d5c;text-decoration:underline;">${escapeHtml(link)}</a></p>` : ""}
+          ${highlight ? `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:24px 0;background-color:#eef5f9;border:1px solid #d9e8f1;border-radius:10px;"><tr><td align="${highlight.code ? "center" : "left"}" style="padding:20px;"><p style="margin:0 0 8px;color:#526879;font-size:12px;line-height:18px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">${escapeHtml(highlight.label)}</p><p style="margin:0;color:#0b3678;font-size:${highlight.code ? "32" : "24"}px;line-height:40px;font-weight:700;${highlight.code ? "font-family:Consolas,monospace;letter-spacing:4px;" : ""}overflow-wrap:anywhere;">${escapeHtml(highlight.value)}</p></td></tr></table>` : ""}
+          ${link ? `<table role="presentation" cellpadding="0" cellspacing="0" style="margin:28px 0 24px;"><tr><td align="center" bgcolor="#0b3678" style="border-radius:8px;background-color:#0b3678;mso-padding-alt:14px 24px;"><a href="${escapeHtml(link)}" style="display:inline-block;padding:14px 24px;border:1px solid #0b3678;border-radius:8px;color:#ffffff;font-size:16px;line-height:22px;font-weight:700;text-decoration:none;">${escapeHtml(label)}</a></td></tr></table><p style="margin:0;color:#64748b;font-size:12px;line-height:20px;">Button not working? Copy this link into your browser:</p><p style="margin:6px 0 0;font-size:12px;line-height:20px;word-break:break-all;overflow-wrap:anywhere;"><a href="${escapeHtml(link)}" style="color:#0b3678;text-decoration:underline;">${escapeHtml(link)}</a></p>` : ""}
         </td></tr>
         <tr><td style="padding:24px;border-top:1px solid #d9e8f1;background-color:#f8fafc;border-radius:0 0 16px 16px;">
-          <p style="margin:0;color:#0a3d5c;font-size:14px;line-height:22px;font-weight:700;">A cleaner space. One less thing to worry about.</p>
-          <p style="margin:8px 0 0;color:#64748b;font-size:12px;line-height:20px;">This is a service email from Cleanin. Keep verification codes and password reset links private.</p>
+          <p style="margin:0;color:#0b3678;font-size:14px;line-height:22px;font-weight:700;">A cleaner space. One less thing to worry about.</p>
+          <p style="margin:8px 0 0;color:#64748b;font-size:12px;line-height:20px;">This is a service email from Esther’s Spotless Touch. Keep verification codes and password reset links private.</p>
         </td></tr>
       </table>
-      <p style="margin:20px 0 0;color:#64748b;font-size:12px;line-height:20px;">&copy; ${new Date().getUTCFullYear()} Cleanin Cleaning Services</p>
+      <p style="margin:20px 0 0;color:#64748b;font-size:12px;line-height:20px;">&copy; ${new Date().getUTCFullYear()} Ogochuks</p>
     </td></tr>
   </table>
 </body>
@@ -52,15 +52,15 @@ export function requestReceivedEmail(input: { name: string; reference: string })
 }
 
 export function verificationEmail(code: string) {
-  return message("Your Cleanin verification code", [`Your verification code is ${code}.`, "It expires in 10 minutes. Do not share this code with anyone."], undefined, undefined, { label: "Your verification code", value: code, code: true });
+  return message("Your Esther’s Spotless Touch verification code", [`Your verification code is ${code}.`, "It expires in 10 minutes. Do not share this code with anyone."], undefined, undefined, { label: "Your verification code", value: code, code: true });
 }
 
 export function passwordResetEmail(token: string) {
-  return message("Reset your Cleanin password", ["You requested a password reset. Use the link below to choose a new password.", "This link expires in 30 minutes. If you didn't request this, you can ignore this email."], appLink(`/reset-password?token=${encodeURIComponent(token)}`), "Reset password");
+  return message("Reset your Esther’s Spotless Touch password", ["You requested a password reset. Use the link below to choose a new password.", "This link expires in 30 minutes. If you didn't request this, you can ignore this email."], appLink(`/reset-password?token=${encodeURIComponent(token)}`), "Reset password");
 }
 
 export function quoteEmail(input: { reference: string; quoteNumber: string; totalKobo: number; expiresAt: Date }) {
-  return message(`Your Cleanin quote ${input.quoteNumber}`, [
+  return message(`Your Esther’s Spotless Touch quote ${input.quoteNumber}`, [
     `Your quote for request ${input.reference} is ready.`,
     `Total: NGN ${(input.totalKobo / 100).toLocaleString("en-NG", { minimumFractionDigits: 2 })}. Valid until ${input.expiresAt.toLocaleDateString("en-GB", { timeZone: "Africa/Lagos" })}.`,
     "View your request to review the quote and make payment.",

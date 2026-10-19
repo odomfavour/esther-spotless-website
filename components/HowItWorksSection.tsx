@@ -19,7 +19,7 @@ export default function HowItWorksSection() {
 
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="text-center mb-20">
-          <p className="text-brand font-semibold mb-3 flex items-center justify-center gap-2 text-sm uppercase tracking-wide">How it works</p>
+          <p className="text-[#007486] font-semibold mb-3 flex items-center justify-center gap-2 text-sm uppercase tracking-wide">How it works</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight">From Request To A Clean Space</h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">No payment when you request. You only pay after you have seen and accepted your quotation.</p>
         </div>
@@ -33,8 +33,8 @@ export default function HowItWorksSection() {
               <div className="relative z-10">
                 <div className="relative inline-block mb-7">
                   <div className="w-28 h-28 rounded-full border-2 border-dashed border-brand-100 bg-white flex items-center justify-center relative shadow-lg">
-                    <step.icon className="w-11 h-11 text-brand" strokeWidth={1.75} />
-                    <div className="absolute -top-2 -right-2 w-10 h-10 bg-brand text-white rounded-full flex items-center justify-center font-bold shadow-lg">
+                    <step.icon className="w-11 h-11 text-[#007486]" strokeWidth={1.75} />
+                    <div className="absolute -top-2 -right-2 w-10 h-10 bg-brand-yellow text-brand rounded-full flex items-center justify-center font-bold shadow-lg">
                       {String(index + 1).padStart(2, "0")}
                     </div>
                     <div className="absolute -top-3 -left-3 w-6 h-6 bg-brand-50 rounded-full border-2 border-brand-100" />

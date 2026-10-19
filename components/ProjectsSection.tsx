@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function ProjectsSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -31,7 +32,7 @@ export default function ProjectsSection() {
         },
       ],
       title: "House Cleaning",
-      location: "Old GRA, Port Harcourt",
+      location: "Uyo, Akwa Ibom State",
     },
     {
       images: [
@@ -57,7 +58,7 @@ export default function ProjectsSection() {
         },
       ],
       title: "Office Cleaning",
-      location: "Trans-Amadi, Port Harcourt",
+      location: "Uyo, Akwa Ibom State",
     },
     {
       images: [
@@ -83,12 +84,12 @@ export default function ProjectsSection() {
         },
       ],
       title: "Window Cleaning",
-      location: "GRA Phase 2, Port Harcourt",
+      location: "Uyo, Akwa Ibom State",
     },
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-gray-50 w-full">
+    <section aria-label="Successful projects" aria-roledescription="carousel" className="py-12 sm:py-16 lg:py-20 bg-gray-50 w-full">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12">
@@ -102,27 +103,38 @@ export default function ProjectsSection() {
                 <span className="block sm:inline">projects.</span>
               </h2>
             </div>
-            <Button className="hidden h-auto px-6 py-3 text-sm hover:bg-brand-700 sm:flex lg:px-8 lg:py-4 lg:text-base">
-              VIEW ALL PROJECTS
-              <svg
-                className="size-4 lg:size-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <div className="flex shrink-0 items-center gap-3" role="group" aria-label="Project gallery navigation">
+              <Button
+                type="button"
+                variant="outline"
+                size="icon"
+                aria-label="Previous project"
+                aria-controls="project-gallery"
+                onClick={() => setCurrentSlide((previous) => (previous - 1 + projects.length) % projects.length)}
+                className="size-11 border-brand/30 text-brand hover:bg-brand hover:text-white"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </Button>
+                <ChevronLeft className="size-5" aria-hidden="true" />
+              </Button>
+              <span className="min-w-12 text-center text-sm font-semibold text-brand" aria-live="polite" aria-atomic="true">
+                <span className="sr-only">{projects[currentSlide].title}, project </span>{currentSlide + 1} / {projects.length}
+              </span>
+              <Button
+                type="button"
+                variant="outline"
+                size="icon"
+                aria-label="Next project"
+                aria-controls="project-gallery"
+                onClick={() => setCurrentSlide((previous) => (previous + 1) % projects.length)}
+                className="size-11 border-brand/30 text-brand hover:bg-brand hover:text-white"
+              >
+                <ChevronRight className="size-5" aria-hidden="true" />
+              </Button>
+            </div>
           </div>
         </div>
 
         {/* Image Gallery - Responsive Grid */}
-        <div className="px-4 sm:px-6 lg:px-8 mb-8">
+        <div id="project-gallery" role="group" aria-roledescription="slide" aria-label={projects[currentSlide].title} className="px-4 sm:px-6 lg:px-8 mb-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             {projects[currentSlide].images.map((image, index) => (
               <div
@@ -196,40 +208,19 @@ export default function ProjectsSection() {
           {projects.map((_, index) => (
             <button
               key={index}
+              type="button"
               onClick={() => setCurrentSlide(index)}
-              className={`rounded-full transition-all duration-300 ${
-                currentSlide === index
-                  ? "bg-brand"
-                  : "bg-gray-300 hover:bg-gray-400"
-              } ${
-                currentSlide === index
-                  ? "w-8 sm:w-12 lg:w-14 h-2"
-                  : "w-6 sm:w-8 lg:w-10 h-2"
-              }`}
+              className="flex min-h-11 min-w-11 items-center justify-center rounded-md px-1"
               aria-label={`Show ${projects[index].title} projects`}
-            />
+              aria-controls="project-gallery"
+              aria-current={currentSlide === index ? "true" : undefined}
+            >
+              <span aria-hidden="true" className={`h-2 rounded-full transition-all duration-300 ${currentSlide === index ? "w-8 bg-brand sm:w-12 lg:w-14" : "w-6 bg-gray-300 hover:bg-gray-400 sm:w-8 lg:w-10"}`} />
+            </button>
           ))}
         </div>
 
-        {/* Mobile View All Button */}
-        <div className="px-4 sm:px-6 lg:px-8 mt-6 sm:mt-8">
-          <Button className="h-auto w-full px-6 py-4 text-sm hover:bg-brand-700 sm:hidden">
-            VIEW ALL PROJECTS
-            <svg
-              className="size-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </Button>
-        </div>
+
       </div>
     </section>
   );

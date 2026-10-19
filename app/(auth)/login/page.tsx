@@ -135,7 +135,7 @@ function LoginForm() {
       </form>
 
       <p className="mt-6 text-center text-sm text-muted-foreground">
-        New to Cleanin?{" "}
+        New to Esther’s Spotless Touch?{" "}
         <Link
           href="/register"
           className="font-semibold text-blue-700 hover:underline"

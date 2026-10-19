@@ -3,7 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* shadcn/ui theme tokens. `primary` is the Cleanin navy (#0a3d5c). */
+/* shadcn/ui theme tokens. `primary` is the Esther’s Spotless Touch navy (#0b3678). */
 :root {
   --radius: 0.625rem;
   --background: #ffffff;
@@ -12,14 +12,14 @@
   --card-foreground: #111827;
   --popover: #ffffff;
   --popover-foreground: #111827;
-  --primary: #0a3d5c;
+  --primary: #0b3678;
   --primary-foreground: #ffffff;
-  --secondary: #eef5f9;
-  --secondary-foreground: #0a3d5c;
+  --secondary: #f0f6fc;
+  --secondary-foreground: #0b3678;
   --muted: #f3f4f6;
   --muted-foreground: #6b7280;
-  --accent: #eef5f9;
-  --accent-foreground: #0a3d5c;
+  --accent: #f0f6fc;
+  --accent-foreground: #0b3678;
   --destructive: #dc2626;
   --border: #e5e7eb;
   --input: #d1d5db;
@@ -75,11 +75,13 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Existing landing-page brand scale (kept so the marketing sections don't change). */
-  --color-brand: #0a3d5c;
-  --color-brand-700: #0d4663;
-  --color-brand-100: #d9e8f1;
-  --color-brand-50: #eef5f9;
+  /* Flyer palette: royal blue leads, with teal and yellow accents. */
+  --color-brand-teal: #008fa5;
+  --color-brand-yellow: #ffda58;
+  --color-brand: #0b3678;
+  --color-brand-700: #08295c;
+  --color-brand-100: #dceafa;
+  --color-brand-50: #f0f6fc;
 }
 
 @layer base {
@@ -91,6 +93,18 @@
   }
   html {
     scroll-behavior: smooth;
+  }
+  /* Pointer feedback for native and shared interactive controls. */
+  button:not(:disabled):not([aria-disabled="true"]),
+  a[href]:not([aria-disabled="true"]),
+  select:not(:disabled),
+  summary,
+  [role="button"]:not([aria-disabled="true"]),
+  input:is([type="checkbox"], [type="radio"], [type="range"]):not(:disabled) {
+    cursor: pointer;
+  }
+  button:disabled, select:disabled, [aria-disabled="true"] {
+    cursor: not-allowed;
   }
   /* Keyboard focus for plain links/buttons; shadcn components override this with their own ring. */
   :focus-visible {
@@ -111,3 +125,21 @@
 .animate-fade-in { animation: fade-in .18s ease-out; }
 .animate-sheet-up { animation: sheet-up .22s ease-out; }
 .animate-pop-in { animation: pop-in .18s ease-out; }
+
+/* Hero decoration uses deterministic geometry in HeroSlider. */
+@keyframes hero-bubble {
+  0% { bottom: -10%; opacity: 0; }
+  5% { opacity: .8; }
+  50% { opacity: .6; }
+  95% { opacity: .3; }
+  100% { bottom: 110%; opacity: 0; }
+}
+.hero-slider .animate-bubble {
+  animation-name: hero-bubble;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  backdrop-filter: blur(1px);
+}
+@media (max-width: 768px) {
+  .hero-slider .pointer-events-none > div:nth-child(n + 10) { display: none; }
+}

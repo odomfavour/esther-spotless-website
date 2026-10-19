@@ -24,7 +24,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
             ))}
           </ul>
         </div>
-        <p className="text-sm text-blue-200/70">© {new Date().getFullYear()} Cleanin Cleaning Services</p>
+        <p className="text-sm text-blue-200/70">© {new Date().getFullYear()} Ogochuks</p>
         <span aria-hidden className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full border border-white/10" />
         <span aria-hidden className="pointer-events-none absolute -bottom-10 -right-10 h-40 w-40 rounded-full border border-white/10" />
       </aside>

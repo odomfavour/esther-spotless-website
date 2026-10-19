@@ -59,7 +59,7 @@ export default function TrackLookupPage() {
       <p className="mt-5 text-center text-sm text-muted-foreground">
         Can&apos;t find your reference? Check the email or SMS we sent you, or{" "}
         <a
-          href="tel:+2348035550142"
+          href="tel:+2348147343027"
           className="font-medium text-blue-700 hover:underline"
         >
           call us

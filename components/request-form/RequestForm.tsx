@@ -121,6 +121,7 @@ export function RequestForm({ mode }: { mode: FormMode }) {
   const account = mode === "account";
   const [step, setStep] = useState(0);
   const [photos, setPhotos] = useState<UploadedFile[]>([]);
+  const [uploadingPhotos, setUploadingPhotos] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [registeredAccount, setRegisteredAccount] = useState(false);
   const top = useRef<HTMLDivElement>(null);
@@ -146,8 +147,8 @@ export function RequestForm({ mode }: { mode: FormMode }) {
     defaultValues: {
       services: [],
       country: "Nigeria",
-      state: "Rivers State",
-      city: "Port Harcourt",
+      state: "Akwa Ibom State",
+      city: "Uyo",
       flexible: false,
       createAccount: false,
       accountPassword: "",
@@ -223,7 +224,7 @@ export function RequestForm({ mode }: { mode: FormMode }) {
         setValue("address", r.address.addressLine1 || "");
         setValue("area", r.address.area || "");
         setValue("city", r.address.city || "");
-        setValue("state", r.address.state || "Rivers State");
+        setValue("state", r.address.state || "Akwa Ibom State");
         setValue("landmark", r.address.landmark || "");
         setValue("directions", r.address.directions || "");
       }
@@ -353,6 +354,7 @@ export function RequestForm({ mode }: { mode: FormMode }) {
     };
   };
   const submit = handleSubmit(async (x) => {
+    if (uploadingPhotos) { toast.error("Please wait for your attachments to finish uploading."); return; }
     try {
       setSubmitting(true);
 
@@ -736,9 +738,10 @@ export function RequestForm({ mode }: { mode: FormMode }) {
                     />
                   </div>
                   <FileUploader
-                    label="Photos of the space (optional but helpful)"
+                    label="Photos and videos of the space (optional but helpful)"
                     value={photos}
                     onChange={setPhotos}
+                    onUploadingChange={setUploadingPhotos}
                     max={8}
                   />
                 </div>
@@ -790,7 +793,7 @@ export function RequestForm({ mode }: { mode: FormMode }) {
                   <Input
                     label="Area"
                     required
-                    placeholder="e.g. Trans-Amadi"
+                    placeholder="Your area in Uyo"
                     error={err("area")}
                     {...reg("area")}
                   />
@@ -800,8 +803,8 @@ export function RequestForm({ mode }: { mode: FormMode }) {
                     disabled
                     options={[
                       {
-                        value: "Rivers State",
-                        label: "Rivers State",
+                        value: "Akwa Ibom State",
+                        label: "Akwa Ibom State",
                       },
                     ]}
                     {...reg("state")}
@@ -949,7 +952,7 @@ export function RequestForm({ mode }: { mode: FormMode }) {
                   <CheckboxField
                     control={control}
                     name="consent"
-                    label="I agree that Cleanin may contact me by phone, email or SMS about this request."
+                    label="I agree that Esther’s Spotless Touch may contact me by phone, email or SMS about this request."
                   />
                   {err("consent") && (
                     <p role="alert" className="mt-1.5 text-sm text-destructive">
@@ -1060,9 +1063,9 @@ export function RequestForm({ mode }: { mode: FormMode }) {
                     />
                     <div className="mt-4">
                       <p className="mb-2 text-xs font-medium text-muted-foreground">
-                        Photos ({preview.photos.length})
+                        Photos and videos ({preview.photos.length})
                       </p>
-                      <PhotoGrid photos={preview.photos} alt="Uploaded photo" />
+                      <PhotoGrid photos={preview.photos} alt="Uploaded attachment" />
                     </div>
                   </Review>
                   <Review title="Location" onEdit={() => setStep(4)}>

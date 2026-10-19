@@ -87,7 +87,7 @@ function RegisterForm() {
           </Button>
         }
       >
-        <p>Welcome to Cleanin. You can now request your first cleaning.</p>
+        <p>Welcome to Esther’s Spotless Touch. You can now request your first cleaning.</p>
       </SuccessPanel>
     );
 

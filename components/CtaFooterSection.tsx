@@ -1,9 +1,13 @@
 "use client";
+import { serviceCatalog } from "@/lib/service-catalog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { toast } from "sonner";
+import { ArrowUpRight, MessageCircle, Sparkles } from "lucide-react";
+import { org } from "@/lib/config";
 
 interface BubbleProps {
   size: string;
@@ -61,60 +65,34 @@ export default function CTAFooterSection() {
 
   return (
     <>
-      {/* CTA Section with Diagonal Split */}
-      <section id="request" className="relative min-h-64 overflow-hidden bg-brand">
-        {/* Left Side - Cleaning Person Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/images/slider-v1-img3.jpg')",
-            // clipPath: "polygon(0 0, 40% 0, 30% 100%, 0 100%)",
-          }}
-        />
-
-        {/* Diagonal Blue Section */}
-        <div
-          className="absolute inset-0 bg-brand lg:[clip-path:polygon(30%_0,100%_0,100%_100%,40%_100%)]"
-          style={{
-          }}
-        />
-
-        <div className="container mx-auto px-6 h-full flex items-center justify-between max-w-7xl relative z-10">
-          {/* Left Side - Empty (image shows through) */}
-          <div className="hidden lg:block lg:w-1/4 shrink-0"></div>
-
-          {/* Center/Right - Text and Button on Blue Background */}
-          <div className="min-w-0 flex-1 flex flex-col xl:flex-row items-start xl:items-center justify-between gap-6 py-12 lg:pl-20">
-            <div className="text-white">
-              <h2 className="text-3xl sm:text-4xl xl:text-5xl font-extrabold">
-                Ready for a cleaner space?
-              </h2>
-              <p className="mt-3 max-w-xl text-white/90">
-                Tell us what you need cleaned and we&apos;ll prepare a quotation for you.
-              </p>
+      {/* A light, standalone invitation separates the CTA from the royal-blue footer. */}
+      <section id="request" aria-labelledby="spotless-cta-heading" className="bg-brand-50 px-4 py-14 sm:px-6 sm:py-20">
+        <div className="mx-auto grid max-w-7xl overflow-hidden rounded-3xl border border-brand/10 bg-white shadow-xl shadow-brand/5 lg:grid-cols-[1.25fr_1fr]">
+          <div className="relative p-7 sm:p-10 lg:p-12">
+            <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1.5 bg-brand-teal" />
+            <div className="mb-6 flex items-center gap-3 text-sm font-semibold uppercase tracking-wider text-brand">
+              <span className="flex size-10 items-center justify-center rounded-xl bg-brand-teal/10"><Sparkles className="size-5 text-brand" aria-hidden="true" /></span>
+              A fresh start for your space
             </div>
-
-            <Button asChild className="h-auto gap-3 bg-brand px-8 py-4 font-bold whitespace-nowrap shadow-xl hover:bg-brand-700 shrink-0 sm:px-10"><Link href="/request-cleaning">
-              Request a Cleaning
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                strokeWidth={3}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 5l7 7-7 7"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </Link></Button>
+            <h2 id="spotless-cta-heading" className="max-w-xl text-3xl font-extrabold leading-tight tracking-tight text-brand sm:text-4xl lg:text-5xl">
+              Your space deserves<br className="hidden sm:block" /> a spotless touch.
+            </h2>
+            <p className="mt-5 max-w-lg text-base leading-relaxed text-slate-600 sm:text-lg">
+              From the everyday clean to a fresh start, let Esther’s Spotless Touch take care of the details.
+            </p>
+            <p className="mt-6 text-sm font-semibold text-brand">Your spotless space, our promise.</p>
+          </div>
+          <div className="relative flex flex-col justify-center overflow-hidden bg-brand p-7 text-white sm:p-10 lg:p-12">
+            <Sparkles aria-hidden="true" className="pointer-events-none absolute -right-5 -top-5 size-36 text-white/5" strokeWidth={1} />
+            <div className="relative">
+              <p className="mb-3 inline-flex items-center gap-2 text-sm font-medium text-white/90"><span aria-hidden="true" className="size-2 rounded-full bg-brand-teal" />Open every day in Uyo</p>
+              <h3 className="text-2xl font-bold sm:text-3xl">Let’s plan your clean.</h3>
+              <p className="mt-3 text-base leading-relaxed text-white/85">Tell us about your space and we’ll prepare a quotation tailored to you.</p>
+              <div className="mt-7 flex flex-col gap-3">
+                <Button asChild className="h-auto w-full gap-3 bg-brand-yellow px-6 py-4 text-base font-bold text-brand hover:bg-brand-yellow/90"><Link href="/request-cleaning">Request a Cleaning <ArrowUpRight className="size-5" aria-hidden="true" /></Link></Button>
+                <a href={org.whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-white/40 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"><MessageCircle className="size-5" aria-hidden="true" />Chat on WhatsApp</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -157,24 +135,11 @@ export default function CTAFooterSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 lg:gap-12 mb-16">
             {/* Column 1 - Company Info */}
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-8 h-8 text-brand"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                    <circle cx="12" cy="12" r="2" fill="white" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold">Cleanin</h3>
-                  <p className="text-xs text-white/60">Cleaning Services</p>
-                </div>
-              </div>
+              <Link href="/" className="mb-6 inline-block overflow-hidden rounded-xl bg-white p-2">
+                <Image src="/brand/esthers-spotless-touch.png" alt="Esther’s Spotless Touch" width={176} height={167} className="h-auto w-44" />
+              </Link>
               <p className="text-white/70 text-sm leading-relaxed mb-6">
-                Professional cleaning for homes, offices and commercial spaces in Port Harcourt. Clear quotations, reliable teams and careful work.
+                Professional cleaning for homes, offices and commercial spaces in Uyo. Clear quotations, reliable teams and careful work.
               </p>
               <div className="flex gap-3">
                 {[
@@ -218,19 +183,12 @@ export default function CTAFooterSection() {
 
             {/* Column 2 - Services */}
             <div>
-              <h4 className="text-xl font-bold mb-6">Services</h4>
+              <h4 className="text-xl font-bold mb-6 text-brand-yellow">Services</h4>
               <ul className="space-y-3">
-                {[
-                  "Residential Cleaning",
-                  "Deep Cleaning",
-                  "Office Cleaning",
-                  "Move-in / Move-out",
-                  "Post-Construction",
-                  "Commercial Cleaning",
-                ].map((service) => (
+                {serviceCatalog.map(({ name: service }) => (
                   <li key={service}>
                     <a
-                      href="#"
+                      href="#services"
                       className="text-white/70 hover:text-white transition-colors flex items-center gap-2 text-sm group"
                     >
                       <svg
@@ -255,7 +213,7 @@ export default function CTAFooterSection() {
 
             {/* Column 3 - Official Info */}
             <div>
-              <h4 className="text-xl font-bold mb-6">Official Info:</h4>
+              <h4 className="text-xl font-bold mb-6 text-brand-yellow">Official Info:</h4>
               <ul className="space-y-5">
                 <li className="flex gap-4">
                   <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
@@ -281,9 +239,9 @@ export default function CTAFooterSection() {
                   </div>
                   <div className="text-sm">
                     <p className="text-white font-semibold mb-1">
-                      14 Trans-Amadi Road
+                      Uyo
                     </p>
-                    <p className="text-white/60">Port Harcourt, Rivers State</p>
+                    <p className="text-white/60">Uyo, Akwa Ibom State</p>
                   </div>
                 </li>
                 <li className="flex gap-4">
@@ -304,9 +262,9 @@ export default function CTAFooterSection() {
                   </div>
                   <div className="text-sm">
                     <p className="text-white font-semibold mb-1">
-                      +234 803 555 0142
+                      <a href="tel:+2348147343027">08147343027</a>
                     </p>
-                    <p className="text-white/60">+234 803 555 0142</p>
+                    <p className="text-white/60">Open every day</p>
                   </div>
                 </li>
                 <li className="flex gap-4">
@@ -327,9 +285,9 @@ export default function CTAFooterSection() {
                   </div>
                   <div className="text-sm">
                     <p className="text-white font-semibold mb-1">
-                      hello@cleanin.ng
+                      <a href="tel:+2348147343027">08147343027</a>
                     </p>
-                    <p className="text-white/60">hello@cleanin.ng</p>
+                    <p className="text-white/60"><a href="https://wa.me/2348147343027">Chat on WhatsApp</a></p>
                   </div>
                 </li>
               </ul>
@@ -337,9 +295,9 @@ export default function CTAFooterSection() {
 
             {/* Column 4 - Newsletter */}
             <div>
-              <h4 className="text-xl font-bold mb-6">Newsletter</h4>
+              <h4 className="text-xl font-bold mb-6 text-brand-yellow">Newsletter</h4>
               <p className="text-white/70 text-sm mb-6 leading-relaxed">
-                Subscribe our newsletter to get our latest update & news
+                Subscribe to our newsletter for the latest news and updates.
               </p>
               <div className="space-y-3">
                 <Input
@@ -347,11 +305,11 @@ export default function CTAFooterSection() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your E-mail"
-                  className="h-auto border-white/20 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/40 focus-visible:border-white/40 focus-visible:bg-white/15 focus-visible:ring-white/20"
+                  className="h-auto border-white/20 bg-white/10 px-4 py-3 text-base text-white placeholder:text-white/70 focus-visible:border-white/40 focus-visible:bg-white/15 focus-visible:ring-white/20"
                 />
                 <Button
                   onClick={handleSubscribe}
-                  className="h-auto w-full bg-brand px-6 py-3 font-bold text-white hover:bg-brand-700"
+                  className="h-auto min-h-12 w-full bg-brand-yellow px-6 py-3 font-bold text-brand shadow-md hover:bg-brand-yellow/90 focus-visible:ring-brand-yellow/60"
                 >
                   SUBSCRIBE
                   <svg
@@ -379,7 +337,7 @@ export default function CTAFooterSection() {
 
           {/* Bottom Footer Bar */}
           <div className="border-t border-white/10 pt-8 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/60">
-            <p>© 2026 Cleanin Cleaning Services. All rights reserved.</p>
+            <p>© 2026 Ogochuks. All rights reserved.</p>
             <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-6">
               <a href="#" className="hover:text-white transition-colors">
                 Setting & Privacy

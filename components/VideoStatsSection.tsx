@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-export default function VideoStatsSection() {
+export default function VideoStatsSection({ videoUrl = process.env.NEXT_PUBLIC_CLOUDINARY_VIDEO_URL }: { videoUrl?: string }) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const stats = [
@@ -81,6 +81,8 @@ export default function VideoStatsSection() {
       label: "Finish The Job",
     },
   ];
+
+  if (!videoUrl) return null;
 
   const handlePlayVideo = () => {
     setIsPlaying(true);
@@ -185,13 +187,13 @@ export default function VideoStatsSection() {
               </>
             ) : (
               <div className="relative" style={{ paddingBottom: "56.25%" }}>
-                <iframe
-                  className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-                  title="Cleaning Service Video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
+                <video
+                  className="absolute inset-0 w-full h-full bg-black"
+                  src={videoUrl}
+                  controls
+                  autoPlay
+                  playsInline
+                  onError={() => setIsPlaying(false)}
                 />
               </div>
             )}

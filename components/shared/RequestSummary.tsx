@@ -149,13 +149,13 @@ export function RequestSummary({ r, bare = false }: RequestSummaryProps) {
 
         <div className="mt-5">
           <p className="mb-2 text-xs font-medium text-muted-foreground">
-            Photos ({r.photos.length})
+            Photos and videos ({r.photos.length})
           </p>
 
           {r.photos.length ? (
             <PhotoGrid photos={r.photos} alt="Space photo" />
           ) : (
-            <p className="text-sm text-muted-foreground">No photos provided.</p>
+            <p className="text-sm text-muted-foreground">No photos or videos provided.</p>
           )}
         </div>
       </Block>

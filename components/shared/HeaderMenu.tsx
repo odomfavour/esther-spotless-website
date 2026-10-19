@@ -28,7 +28,7 @@ export function HeaderMenu({ links }: { links: { href: string; label: string }[]
           <SheetTitle className="text-brand">Menu</SheetTitle>
           <SheetClose asChild><Button variant="ghost" size="icon" aria-label="Close navigation menu"><X /></Button></SheetClose>
         </div>
-        <SheetDescription className="sr-only">Navigate between Cleanin pages.</SheetDescription>
+        <SheetDescription className="sr-only">Navigate between Esther’s Spotless Touch pages.</SheetDescription>
         <nav aria-label="Mobile navigation" className="mt-4 flex flex-col gap-1">
           {links.map((link) => <SheetClose asChild key={link.href}><Link href={link.href} aria-current={path === link.href ? "page" : undefined} className="rounded-lg px-4 py-3 font-medium text-brand hover:bg-brand-50 aria-[current=page]:bg-brand-50">{link.label}</Link></SheetClose>)}
         </nav>

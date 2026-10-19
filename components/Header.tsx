@@ -34,17 +34,17 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-8">
             <div className="flex items-center gap-2">
               <span>🕒</span>
-              <span>Mon – Sat, 8:00 am – 6:00 pm</span>
+              <span>Open every day</span>
             </div>
 
             <div className="flex items-center gap-2">
               <span>📞</span>
-              <span>+234 803 555 0142</span>
+              <a href="tel:+2348147343027">08147343027</a>
             </div>
 
             <div className="flex items-center gap-2">
               <span>📍</span>
-              <span>Trans-Amadi, Port Harcourt</span>
+              <span>Uyo, Akwa Ibom State</span>
             </div>
           </div>
 
@@ -99,7 +99,7 @@ export default function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto h-16 px-4 sm:px-6 flex justify-between items-center gap-4">
-          <Link href="/" aria-label="Cleanin home" className="shrink-0" onClick={() => setOpenMenu(false)}>
+          <Link href="/" aria-label="Esther’s Spotless Touch home" className="shrink-0" onClick={() => setOpenMenu(false)}>
             <Logo />
           </Link>
 
@@ -127,15 +127,15 @@ export default function Header() {
           {/* Desktop Navigation */}
           <ul className="hidden xl:flex items-center gap-6 text-gray-700 font-semibold">
             {[["Services","#services"],["How It Works","#how-it-works"],["About","#about"],["Contact","#contact"]].map(([l,h]) => (
-              <li key={h}><a href={h} className="block py-2 hover:text-brand-700">{l}</a></li>
+              <li key={h}><a href={h} className="block py-2 hover:text-[#007486]">{l}</a></li>
             ))}
-            <li><Link href="/request" className="block py-2 hover:text-brand-700">Track Request</Link></li>
-            <li><Link href="/login" className="block py-2 hover:text-brand-700">Login</Link></li>
+            <li><Link href="/request" className="block py-2 hover:text-[#007486]">Track Request</Link></li>
+            <li><Link href="/login" className="block py-2 hover:text-[#007486]">Login</Link></li>
           </ul>
 
           {/* CTA Button Desktop */}
           <div className="hidden xl:flex">
-            <Button asChild className="h-auto px-6 py-3 font-bold hover:bg-brand-700"><Link href="/request-cleaning">
+            <Button asChild className="h-auto px-6 py-3 font-bold bg-brand-yellow text-brand hover:bg-brand-yellow/90"><Link href="/request-cleaning">
               Request a Cleaning
             </Link></Button>
           </div>
@@ -146,13 +146,13 @@ export default function Header() {
           <div id="landing-mobile-menu" onClick={() => setOpenMenu(false)} className="xl:hidden max-h-[calc(100dvh-64px)] overflow-y-auto bg-white px-6 pb-4 border-t border-border">
             <ul className="flex flex-col gap-1 text-gray-700 font-semibold">
               {[["Services","#services"],["How It Works","#how-it-works"],["About","#about"],["Contact","#contact"]].map(([l,h]) => (
-              <li key={h}><a href={h} className="block py-2 hover:text-brand-700">{l}</a></li>
+              <li key={h}><a href={h} className="block py-2 hover:text-[#007486]">{l}</a></li>
             ))}
-            <li><Link href="/request" className="block py-2 hover:text-brand-700">Track Request</Link></li>
-            <li><Link href="/login" className="block py-2 hover:text-brand-700">Login</Link></li>
+            <li><Link href="/request" className="block py-2 hover:text-[#007486]">Track Request</Link></li>
+            <li><Link href="/login" className="block py-2 hover:text-[#007486]">Login</Link></li>
             </ul>
 
-            <Button asChild className="mt-4 h-auto w-full py-3 font-bold hover:bg-brand-700"><Link href="/request-cleaning">
+            <Button asChild className="mt-4 h-auto w-full py-3 font-bold bg-brand-yellow text-brand hover:bg-brand-yellow/90"><Link href="/request-cleaning">
               Request a Cleaning
             </Link></Button>
           </div>

@@ -7,7 +7,6 @@ import {
   CalendarClock,
   Clock,
   LifeBuoy,
-  Mail,
   MapPin,
   MessageCircle,
   Phone,
@@ -237,7 +236,7 @@ export default function BookingDetailsPage() {
       >
         <div className="space-y-2.5">
           <Button
-            href={`tel:${org.phone.replace(/\s/g, "")}`}
+            href={org.phoneHref}
             variant="secondary"
             full
             className="justify-start"
@@ -246,7 +245,7 @@ export default function BookingDetailsPage() {
             Call {org.phone}
           </Button>
           <Button
-            href={`https://wa.me/${org.phone.replace(/\D/g, "")}`}
+            href={org.whatsappUrl}
             variant="secondary"
             full
             className="justify-start"
@@ -254,15 +253,7 @@ export default function BookingDetailsPage() {
             <MessageCircle className="size-4" />
             Message on WhatsApp
           </Button>
-          <Button
-            href={`mailto:${org.email}?subject=${booking.bookingNumber}`}
-            variant="secondary"
-            full
-            className="justify-start"
-          >
-            <Mail className="size-4" />
-            Email {org.email}
-          </Button>
+
         </div>
       </Dialog>
     </>

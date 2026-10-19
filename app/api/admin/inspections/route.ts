@@ -83,7 +83,7 @@ export async function POST(request: Request) {
      * date = "2026-10-05"
      * time = "08:00"
      *
-     * Cleanin currently operates in Nigeria, so construct the
+     * Esther’s Spotless Touch currently operates in Nigeria, so construct the
      * scheduled time as Africa/Lagos rather than accidentally
      * treating it as UTC.
      */

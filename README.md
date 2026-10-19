@@ -33,3 +33,23 @@ The backend is built with Next.js Route Handlers (`app/api/**/route.ts`) backed 
 - `components/request-form`: the 8-step request form (+ Zod schema), shared by public and logged-in flows
 - `components/landing`: new landing sections; older sections remain in `components/*Section.tsx`
 - `lib/config.ts`: organization name/phone/address (landing-page sections still contain a few literal copies)
+
+### Cloudinary photos and videos
+
+Set these server-only variables in `.env.local` and in the deployment environment:
+
+```dotenv
+CLOUDINARY_CLOUD_NAME=your-cloud-name
+CLOUDINARY_API_KEY=your-api-key
+CLOUDINARY_API_SECRET=your-api-secret
+# Optional public URL of your uploaded website video:
+NEXT_PUBLIC_CLOUDINARY_VIDEO_URL=https://res.cloudinary.com/your-cloud/video/upload/your-video.mp4
+```
+
+Photos in cleaning requests (including guest requests), inspection reports and reviews upload to Cloudinary before submission. Supported formats: JPEG, PNG, WebP and GIF, up to 5 MB. The guest photo endpoint proxies uploads; configure your host to accept multipart bodies above 5 MB, and apply deployment-level rate limiting to `/api/uploads`. Hosts with lower request limits require smaller photos or a direct-upload guest flow.
+
+Admins can upload MP4, WebM or MOV videos (up to 50 MB) under **Settings → Organization**. Videos upload directly to Cloudinary using a server-generated signature. Copy the returned URL into `NEXT_PUBLIC_CLOUDINARY_VIDEO_URL` and rebuild to configure `VideoStatsSection`. This section remains absent from the homepage because its existing statistics are placeholders; configure real statistics before adding it to the homepage. API secrets must never use a `NEXT_PUBLIC_` prefix.
+
+Removing a photo from a form removes its URL from that form; it does not delete the Cloudinary asset. Previously saved `blob:` URLs cannot be recovered and need to be uploaded again.
+
+Customers and staff can also attach MP4, WebM and MOV videos (up to 50 MB) to cleaning requests, booking reviews and inspection reports through the shared attachment picker. Video uploads require login; guest requests still support photos. Videos and photos share each form’s existing attachment limit (8 for requests and inspections, 4 for reviews). Existing `photos` URL arrays retain both kinds of attachment for backward compatibility; all attachment grids render video controls for video URLs.

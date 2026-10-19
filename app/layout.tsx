@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Cleanin | Professional Cleaning Services",
-    template: "%s | Cleanin",
+    default: "Esther’s Spotless Touch | Professional Cleaning in Uyo",
+    template: "%s | Esther’s Spotless Touch",
   },
   description:
-    "Request a professional cleaning for your home, office or commercial space. Get a clear quotation, approve it online and we take care of the rest.",
+    "Professional cleaning, laundry, fumigation and pest control in Uyo. Open every day. Your spotless space, our promise. Call 08147343027.",
 };
 
 export default function RootLayout({

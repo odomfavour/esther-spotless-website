@@ -12,7 +12,7 @@ import EnvironmentsSection from "@/components/landing/EnvironmentsSection";
 import FaqSection from "@/components/landing/FaqSection";
 import TrustSection from "@/components/landing/TrustSection";
 import WhyChooseUsSection from "@/components/landing/WhyChooseUsSection";
-import BackToTop from "@/components/landing/BackToTop";
+import WhatsAppChat from "@/components/landing/WhatsAppChat";
 
 // VideoStatsSection is intentionally not rendered: its placeholder statistics
 // (e.g. "999k+ Happy Clients") aren't credible. Re-add once you have real numbers.
@@ -33,7 +33,7 @@ export default function Home() {
       <FaqSection />
       <ContactSection />
       <CTAFooterSection />
-      <BackToTop />
+      <WhatsAppChat />
     </div>
   );
 }

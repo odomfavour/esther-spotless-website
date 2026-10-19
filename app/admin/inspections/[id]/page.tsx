@@ -214,14 +214,14 @@ export default function InspectionDetail() {
 
                 <div>
                   <p className="mb-2 text-xs font-medium text-muted-foreground">
-                    Photos ({report.photos.length})
+                    Photos and videos ({report.photos.length})
                   </p>
 
                   {report.photos.length ? (
                     <PhotoGrid photos={report.photos} alt="Inspection photo" />
                   ) : (
                     <p className="text-sm text-muted-foreground">
-                      No inspection photos.
+                      No inspection photos or videos.
                     </p>
                   )}
                 </div>

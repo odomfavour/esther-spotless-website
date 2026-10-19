@@ -7,9 +7,9 @@ import Link from "next/link";
 const slides = [
   {
     img: "/images/slider-v1-img1.jpg",
-    title: "Professional Cleaning.",
-    subtitle: "Made Simple.",
-    desc: "Request professional cleaning for your home, office or commercial space. Tell us what you need, get a clear quotation, and we take care of the rest.",
+    title: "Uyo Professional Cleaning.",
+    subtitle: "Your spotless space, our promise.",
+    desc: "Open every day in Uyo. Request professional cleaning, laundry, pest control and more. Tell us what you need, get a clear quotation, and we take care of the rest.",
   },
   {
     img: "/images/slider-v1-img2.jpg",
@@ -33,17 +33,17 @@ interface Bubble {
   duration: number;
 }
 
+// Fixed values keep the server markup identical to the browser’s first render.
+const bubbles: Bubble[] = Array.from({ length: 15 }, (_, index) => ({
+  id: index,
+  size: 8 + ((index * 17 + 11) % 30),
+  left: (index * 37 + 7) % 100,
+  delay: index * 0.5,
+  duration: 10 + ((index * 3 + 2) % 8),
+}));
+
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
-  const [bubbles] = useState<Bubble[]>(() => {
-    return [...Array(15)].map((_, i) => ({
-      id: i,
-      size: 8 + Math.random() * 30, // Smaller bubbles for mobile
-      left: Math.random() * 100,
-      delay: i * 0.5,
-      duration: 10 + Math.random() * 8,
-    }));
-  });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -53,7 +53,7 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <div className="relative min-h-[36rem] min-h-[max(36rem,80svh)] w-full overflow-hidden bg-gray-900">
+    <div className="hero-slider relative min-h-[36rem] min-h-[max(36rem,80svh)] w-full overflow-hidden bg-gray-900">
       {/* Realistic Bubble Animation Layer */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden z-10">
         {bubbles.map((bubble) => (
@@ -113,7 +113,7 @@ export default function HeroSlider() {
           />
 
           {/* Blue Filter */}
-          <div className="absolute inset-0 bg-brand/50" />
+          <div className="absolute inset-0 bg-brand/65" />
         </div>
       ))}
 
@@ -126,7 +126,7 @@ export default function HeroSlider() {
           >
             {slides[current].title}
             <br />
-            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-[#72e1e0]">
               {slides[current].subtitle}
             </span>
           </h1>
@@ -140,11 +140,11 @@ export default function HeroSlider() {
 
           {/* CTA BUTTON - Responsive */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start mt-6 sm:mt-8">
-            <Button asChild variant="secondary" className="h-auto bg-white px-6 py-3 text-sm text-brand shadow-lg hover:bg-brand-50 hover:shadow-xl sm:px-8 sm:py-4 sm:text-base"><Link href="/request-cleaning">
+            <Button asChild variant="secondary" className="h-auto bg-brand-yellow px-6 py-3 text-sm text-brand shadow-lg hover:bg-brand-yellow/90 hover:shadow-xl sm:px-8 sm:py-4 sm:text-base"><Link href="/request-cleaning">
               Request a Cleaning
             </Link></Button>
-            <Button asChild variant="outline" className="h-auto border-2 border-white/80 bg-transparent px-6 py-3 text-sm text-white hover:bg-white/10 hover:text-white sm:px-8 sm:py-4 sm:text-base"><a href="#services">
-              Explore Services
+            <Button asChild variant="outline" className="h-auto border-2 border-white/80 bg-transparent px-6 py-3 text-sm text-white hover:bg-white/10 hover:text-white sm:px-8 sm:py-4 sm:text-base"><a href="https://wa.me/2348147343027">
+              Book on WhatsApp
             </a></Button>
           </div>
         </div>
@@ -182,42 +182,7 @@ export default function HeroSlider() {
         ))}
       </div>
 
-      {/* Bubble Animation Keyframes */}
-      <style jsx>{`
-        @keyframes bubble {
-          0% {
-            bottom: -10%;
-            opacity: 0;
-          }
-          5% {
-            opacity: 0.8;
-          }
-          50% {
-            opacity: 0.6;
-          }
-          95% {
-            opacity: 0.3;
-          }
-          100% {
-            bottom: 110%;
-            opacity: 0;
-          }
-        }
 
-        .animate-bubble {
-          animation-name: bubble;
-          animation-timing-function: ease-in-out;
-          animation-iteration-count: infinite;
-          backdrop-filter: blur(1px);
-        }
-
-        /* Reduce bubbles on mobile for better performance */
-        @media (max-width: 768px) {
-          .pointer-events-none > div:nth-child(n + 10) {
-            display: none;
-          }
-        }
-      `}</style>
     </div>
   );
 }

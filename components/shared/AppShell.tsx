@@ -43,7 +43,7 @@ export function AppShell({ nav, bottomNav, audience, user, cta, portal, children
   const sidebar = (inDrawer: boolean) => (
     <div className="flex h-full flex-col bg-primary text-white">
       <div className="flex h-16 shrink-0 items-center justify-between px-5">
-        <Link href="/" aria-label="Cleanin home" onClick={() => setDrawer(false)}><Logo light /></Link>
+        <Link href="/" aria-label="Esther’s Spotless Touch home" onClick={() => setDrawer(false)}><Logo light /></Link>
         {inDrawer && (
           <SheetClose asChild>
             <UiButton variant="ghost" size="icon" className="size-9 text-blue-100 hover:bg-white/10 hover:text-white" aria-label="Close menu"><X /></UiButton>
@@ -78,7 +78,7 @@ export function AppShell({ nav, bottomNav, audience, user, cta, portal, children
       <div className="lg:pl-64">
         <header className="sticky top-0 z-20 flex h-16 min-w-0 items-center gap-2 sm:gap-3 border-b bg-background/95 px-4 backdrop-blur sm:px-6">
           <UiButton variant="ghost" size="icon" className="-ml-2 size-11 shrink-0 lg:hidden" onClick={() => setDrawer(true)} aria-label="Open menu"><Menu className="size-5" /></UiButton>
-          <Link href="/" className="shrink-0 lg:hidden" aria-label="Cleanin home"><Logo /></Link>
+          <Link href="/" className="shrink-0 lg:hidden" aria-label="Esther’s Spotless Touch home"><Logo /></Link>
           <div className="ml-auto flex shrink-0 items-center gap-2">
             {cta && <><Button href={cta.href} size="sm" className="hidden sm:inline-flex"><Plus />{cta.label}</Button></>}
             <NotificationPanel audience={audience} />
