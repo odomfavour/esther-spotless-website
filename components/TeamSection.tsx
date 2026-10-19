@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import SocialLinks from "@/components/shared/SocialLinks";
 
 interface TeamMember {
   image: string;
@@ -45,45 +46,8 @@ export default function TeamSection() {
                 />
 
                 {/* Hover Overlay with Social Icons */}
-                <div className="absolute inset-0 bg-brand/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="flex gap-3">
-                    {[
-                      <path
-                        key="fb"
-                        d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
-                      />,
-                      <path
-                        key="tw"
-                        d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
-                      />,
-                      <path
-                        key="ig"
-                        d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
-                      />,
-                      <path
-                        key="pi"
-                        d="M12 0a12 12 0 0012 12c0-5.28-3.6-9.72-8.4-11.04C13.2 1.68 12 3.6 12 6v6c0 3.36-2.64 6-6 6-3.12 0-5.76-2.4-5.76-5.52C.24 9.12 2.4 6.72 5.52 6.72c.96 0 1.92.24 2.64.72"
-                      />,
-                    ].map((path, i) => (
-                      <a
-                        key={i}
-                        href="#"
-                        className="w-12 h-12 bg-white text-brand rounded-full flex items-center justify-center hover:bg-brand-700 hover:text-white transition-all"
-                      >
-                        <svg
-                          className="size-5"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          viewBox="0 0 24 24"
-                        >
-                          {path}
-                        </svg>
-                      </a>
-                    ))}
-                  </div>
+                <div className="absolute inset-0 bg-brand/35 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <SocialLinks linkClassName="w-12 h-12 bg-white text-brand rounded-full flex items-center justify-center hover:bg-brand-700 hover:text-white transition-all" />
                 </div>
 
                 {/* Name and Role */}
