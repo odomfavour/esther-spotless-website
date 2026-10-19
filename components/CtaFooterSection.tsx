@@ -337,7 +337,7 @@ export default function CTAFooterSection() {
 
           {/* Bottom Footer Bar */}
           <div className="border-t border-white/10 pt-8 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/60">
-            <p>© 2026 Ogochuks. All rights reserved.</p>
+            <p>© 2026 Esther’s Spotless Touch. All rights reserved.</p>
             <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-6">
               <a href="#" className="hover:text-white transition-colors">
                 Setting & Privacy

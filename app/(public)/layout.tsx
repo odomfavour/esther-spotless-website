@@ -18,7 +18,7 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
         </div>
       </header>
       <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-6 sm:px-6 sm:py-10">{children}</main>
-      <footer className="border-t border-border bg-white py-5 text-center text-sm text-muted-foreground">© 2026 Ogochuks · Questions? Call 08147343027</footer>
+      <footer className="border-t border-border bg-white py-5 text-center text-sm text-muted-foreground">© 2026 Esther’s Spotless Touch · Questions? Call 08147343027</footer>
     </div>
   );
 }

@@ -14,6 +14,7 @@ export default function TeamSection() {
     { image: "/team/Etinyene-Effiong.jpeg", name: "Etinyene Effiong", role: "Team Member" },
     { image: "/team/Ngozi-Okereke.jpeg", name: "Ngozi Okereke", role: "Team Member" },
     { image: "/team/Blessing-Jackson.jpeg", name: "Blessing Jackson", role: "Team Member" },
+    { image: "/team/Joseph-Edekere.jpeg", name: "Joseph Edekere", role: "Team Member" },
   ];
 
   return (
@@ -31,7 +32,7 @@ export default function TeamSection() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 mb-12">
           {teamMembers.map((member, index) => (
             <div key={index} className="group relative">
               <div className="relative overflow-hidden rounded-2xl shadow-lg h-[450px]">
@@ -40,7 +41,7 @@ export default function TeamSection() {
                   alt={member.name}
                   fill
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 20vw"
+                  sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 25vw"
                 />
 
                 {/* Hover Overlay with Social Icons */}

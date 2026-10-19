@@ -37,7 +37,7 @@ function message(subject: string, paragraphs: string[], link?: string, label = "
           <p style="margin:8px 0 0;color:#64748b;font-size:12px;line-height:20px;">This is a service email from Esther’s Spotless Touch. Keep verification codes and password reset links private.</p>
         </td></tr>
       </table>
-      <p style="margin:20px 0 0;color:#64748b;font-size:12px;line-height:20px;">&copy; ${new Date().getUTCFullYear()} Ogochuks</p>
+      <p style="margin:20px 0 0;color:#64748b;font-size:12px;line-height:20px;">&copy; ${new Date().getUTCFullYear()} Esther’s Spotless Touch</p>
     </td></tr>
   </table>
 </body>
