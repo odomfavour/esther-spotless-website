@@ -49,7 +49,7 @@ const AboutSection = () => {
               Professional Cleaning, Handled From Start To Finish
             </h2>
             <p className="mb-4">
-              Esther’s Spotless Touch is a professional cleaning company serving homes, offices and commercial spaces. Our trained teams bring their own equipment and take care of every detail.
+              Esther’s Spotless Touch is a professional cleaning company serving homes, offices and commercial spaces. Our team provides hands-on cleaning with care and attention to detail.
             </p>
             <p>
               Every job begins with a clear quotation tailored to your space, so you know exactly what to expect before you commit.

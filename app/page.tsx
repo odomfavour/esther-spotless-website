@@ -5,11 +5,13 @@ import Header from "@/components/Header";
 import HeroSlider from "@/components/HeroSlider";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import PriceListSection from "@/components/landing/PriceListSection";
 import ServiceSection from "@/components/ServiceSection";
 import TeamSection from "@/components/TeamSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import EnvironmentsSection from "@/components/landing/EnvironmentsSection";
 import FaqSection from "@/components/landing/FaqSection";
+import TractionSection from "@/components/landing/TractionSection";
 import TrustSection from "@/components/landing/TrustSection";
 import WhyChooseUsSection from "@/components/landing/WhyChooseUsSection";
 import WhatsAppChat from "@/components/landing/WhatsAppChat";
@@ -23,7 +25,9 @@ export default function Home() {
       <HeroSlider />
       <TrustSection />
       <AboutSection />
+      <TractionSection />
       <ServiceSection />
+      <PriceListSection />
       <HowItWorksSection />
       <WhyChooseUsSection />
       <EnvironmentsSection />

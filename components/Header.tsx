@@ -126,7 +126,7 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <ul className="hidden xl:flex items-center gap-6 text-gray-700 font-semibold">
-            {[["Services","#services"],["How It Works","#how-it-works"],["About","#about"],["Contact","#contact"]].map(([l,h]) => (
+            {[["Services","#services"],["Price List","#pricing"],["How It Works","#how-it-works"],["About","#about"],["Contact","#contact"]].map(([l,h]) => (
               <li key={h}><a href={h} className="block py-2 hover:text-[#007486]">{l}</a></li>
             ))}
             <li><Link href="/request" className="block py-2 hover:text-[#007486]">Track Request</Link></li>
@@ -145,7 +145,7 @@ export default function Header() {
         {openMenu && (
           <div id="landing-mobile-menu" onClick={() => setOpenMenu(false)} className="xl:hidden max-h-[calc(100dvh-64px)] overflow-y-auto bg-white px-6 pb-4 border-t border-border">
             <ul className="flex flex-col gap-1 text-gray-700 font-semibold">
-              {[["Services","#services"],["How It Works","#how-it-works"],["About","#about"],["Contact","#contact"]].map(([l,h]) => (
+              {[["Services","#services"],["Price List","#pricing"],["How It Works","#how-it-works"],["About","#about"],["Contact","#contact"]].map(([l,h]) => (
               <li key={h}><a href={h} className="block py-2 hover:text-[#007486]">{l}</a></li>
             ))}
             <li><Link href="/request" className="block py-2 hover:text-[#007486]">Track Request</Link></li>

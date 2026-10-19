@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { Building2, Bug, Droplets, HardHat, Home, Hotel, Leaf, PackageOpen, PartyPopper, Shirt } from "lucide-react";
 import { serviceCatalog } from "@/lib/service-catalog";
 
@@ -116,9 +115,7 @@ export default function ServiceSection() {
               </div>
               <h3 className="text-2xl font-bold mt-6 mb-3 text-primary">{svc.title}</h3>
               <p className="text-gray-600 leading-relaxed mb-6">{svc.desc}</p>
-              <Link href="/request-cleaning" className="text-primary font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all">
-                Request this service <span className="text-lg">+</span>
-              </Link>
+
             </div>
           ))}
         </div>

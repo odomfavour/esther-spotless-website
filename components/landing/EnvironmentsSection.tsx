@@ -18,7 +18,7 @@ export default function EnvironmentsSection() {
         <div className="text-center mb-14">
           <p className="text-[#007486] font-semibold mb-3 text-sm uppercase tracking-wide">Where we clean</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight">One Team, Every Environment</h2>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">Different spaces need different methods. Tell us where, and we send the right people and equipment.</p>
+          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">Different spaces need different care. Tell us about your space, and we’ll discuss the cleaning it needs.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {envs.map((e) => (

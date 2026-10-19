@@ -7,7 +7,7 @@ const steps = [
   { icon: Search, title: "We Review Your Request", description: "Our team goes through your details and photos. For larger spaces we may visit to inspect before quoting." },
   { icon: FileText, title: "Receive Your Quote", description: "You get an itemised quotation that shows exactly what is included and what it costs." },
   { icon: CreditCard, title: "Approve & Pay", description: "Happy with the quote? Accept it and pay securely online to confirm your booking. Not for you? Decline at no cost." },
-  { icon: Sparkles, title: "We Clean Your Space", description: "A trained team arrives on the agreed day with the right equipment. Track progress and leave a review afterwards." },
+  { icon: Sparkles, title: "We Clean Your Space", description: "Our team arrives on the agreed day to carry out the cleaning in your quotation. Track progress and leave a review afterwards." },
 ];
 
 export default function HowItWorksSection() {

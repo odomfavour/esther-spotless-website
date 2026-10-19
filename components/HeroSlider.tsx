@@ -15,7 +15,7 @@ const slides = [
     img: "/images/slider-v1-img2.jpg",
     title: "Your Space, Renewed.",
     subtitle: "Clean Meets Comfort.",
-    desc: "From a single apartment to a multi-floor office, our trained teams bring the right equipment and attention to detail.",
+    desc: "From a single apartment to a multi-floor office, our team gives your space careful, hands-on attention.",
   },
   {
     img: "/images/slider-v1-img3.jpg",

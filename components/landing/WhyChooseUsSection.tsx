@@ -6,7 +6,7 @@ const points = [
   { icon: Settings2, title: "Tailored cleaning solutions", text: "No fixed packages. We scope each job to your space and quote it accordingly." },
   { icon: Clock, title: "Reliable scheduling", text: "We confirm your date, tell you who is coming, and let you know when the team is on the way." },
   { icon: Eye, title: "Careful attention to detail", text: "Grout, skirting boards, window tracks. We clean the places that usually get skipped." },
-  { icon: Brush, title: "Professional equipment", text: "Commercial-grade machines and the right products for each surface and material." },
+  { icon: Brush, title: "Hands-on cleaning care", text: "Practical, hands-on cleaning tailored to your space and the work agreed in your quotation." },
   { icon: HeartHandshake, title: "Customer-focused service", text: "Questions or concerns? A real person responds, before, during and after the job." },
 ];
 
