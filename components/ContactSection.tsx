@@ -267,7 +267,7 @@ id="contact"       className="relative py-12 px-4 sm:py-20 sm:px-6 bg-cover bg-c
                   </div>
                   <div>
                     <a href="tel:+2348147343027" className="font-semibold mb-1 block">08147343027</a>
-                    <p className="text-white/70 text-sm">Open every day</p>
+                    <p className="text-white/70 text-sm">Open Monday–Saturday</p>
                   </div>
                 </div>
 

@@ -2,10 +2,13 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { marketingNavigation } from "@/lib/marketing-navigation";
 import SocialLinks from "@/components/shared/SocialLinks";
 import { Logo } from "@/components/kit/Misc";
 
 export default function Header() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
 
@@ -35,7 +38,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-8">
             <div className="flex items-center gap-2">
               <span>🕒</span>
-              <span>Open every day</span>
+              <span>Open Monday–Saturday</span>
             </div>
 
             <div className="flex items-center gap-2">
@@ -86,9 +89,9 @@ export default function Header() {
           </Button>
 
           {/* Desktop Navigation */}
-          <ul className="hidden xl:flex items-center gap-6 text-gray-700 font-semibold">
-            {[["Services","#services"],["Price List","#pricing"],["How It Works","#how-it-works"],["About","#about"],["Contact","#contact"]].map(([l,h]) => (
-              <li key={h}><a href={h} className="block py-2 hover:text-[#007486]">{l}</a></li>
+          <ul className="hidden xl:flex items-center gap-4 text-sm text-gray-700 font-semibold">
+            {marketingNavigation.map(link => (
+              <li key={link.href}><Link href={link.href} aria-current={pathname === link.href ? "page" : undefined} className={`block py-2 hover:text-[#007486] ${pathname === link.href ? "font-bold text-brand underline decoration-brand-teal underline-offset-8" : ""}`}>{link.label}</Link></li>
             ))}
             <li><Link href="/request" className="block py-2 hover:text-[#007486]">Track Request</Link></li>
             <li><Link href="/login" className="block py-2 hover:text-[#007486]">Login</Link></li>
@@ -106,8 +109,8 @@ export default function Header() {
         {openMenu && (
           <div id="landing-mobile-menu" onClick={() => setOpenMenu(false)} className="xl:hidden max-h-[calc(100dvh-64px)] overflow-y-auto bg-white px-6 pb-4 border-t border-border">
             <ul className="flex flex-col gap-1 text-gray-700 font-semibold">
-              {[["Services","#services"],["Price List","#pricing"],["How It Works","#how-it-works"],["About","#about"],["Contact","#contact"]].map(([l,h]) => (
-              <li key={h}><a href={h} className="block py-2 hover:text-[#007486]">{l}</a></li>
+              {marketingNavigation.map(link => (
+              <li key={link.href}><Link href={link.href} aria-current={pathname === link.href ? "page" : undefined} className={`block py-2 hover:text-[#007486] ${pathname === link.href ? "font-bold text-brand underline decoration-brand-teal underline-offset-8" : ""}`}>{link.label}</Link></li>
             ))}
             <li><Link href="/request" className="block py-2 hover:text-[#007486]">Track Request</Link></li>
             <li><Link href="/login" className="block py-2 hover:text-[#007486]">Login</Link></li>

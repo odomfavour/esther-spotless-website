@@ -9,7 +9,7 @@ const slides = [
     img: "/images/slider-v1-img1.jpg",
     title: "Uyo Professional Cleaning.",
     subtitle: "Your spotless space, our promise.",
-    desc: "Open every day in Uyo. Request professional cleaning, laundry, pest control and more. Tell us what you need, get a clear quotation, and we take care of the rest.",
+    desc: "Open Monday–Saturday in Uyo. Request professional cleaning, laundry, pest control and more. Tell us what you need, get a clear quotation, and we take care of the rest.",
   },
   {
     img: "/images/slider-v1-img2.jpg",

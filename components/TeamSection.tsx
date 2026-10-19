@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import SocialLinks from "@/components/shared/SocialLinks";
 
 interface TeamMember {
@@ -8,7 +9,7 @@ interface TeamMember {
   role: string;
 }
 
-export default function TeamSection() {
+export default function TeamSection({ preview = false }: { preview?: boolean }) {
   const teamMembers: TeamMember[] = [
     { image: "/team/Esther-Udoka.jpeg", name: "Esther Udoka", role: "CEO" },
     { image: "/team/Blessing-Essienekak.jpeg", name: "Blessing Essienekak", role: "Team Member" },
@@ -19,7 +20,7 @@ export default function TeamSection() {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gray-50 relative">
+    <section id="team" className="py-20 px-6 bg-gray-50 relative scroll-mt-20">
 
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
@@ -34,7 +35,7 @@ export default function TeamSection() {
 
         {/* Team Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 mb-12">
-          {teamMembers.map((member, index) => (
+          {(preview ? teamMembers.slice(0, 4) : teamMembers).map((member, index) => (
             <div key={index} className="group relative">
               <div className="relative overflow-hidden rounded-2xl shadow-lg h-[450px]">
                 <Image
@@ -59,6 +60,7 @@ export default function TeamSection() {
             </div>
           ))}
         </div>
+        {preview && <div className="text-center"><Link href="/about#team" className="inline-flex min-h-12 items-center justify-center rounded-lg bg-brand-yellow px-7 py-3 font-bold text-brand transition-colors hover:bg-brand-yellow/90">View more</Link></div>}
       </div>
     </section>
   );

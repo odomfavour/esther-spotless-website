@@ -1,11 +1,12 @@
 "use client";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { customerTestimonials } from "@/lib/testimonials";
 import { initials } from "@/lib/utils";
 
-export default function TestimonialsSection() {
+export default function TestimonialsSection({ preview = false }: { preview?: boolean }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Balanced pages keep all seven reviews accessible without a one-card final page.
@@ -26,7 +27,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-20 px-6 bg-gray-50 relative overflow-hidden">
+    <section id="testimonials" className="scroll-mt-20 py-20 px-6 bg-gray-50 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 right-20 text-9xl font-bold text-gray-400">
@@ -53,7 +54,7 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Navigation Arrows */}
-          <div className="flex gap-3">
+          {!preview && <div className="flex gap-3">
             <Button
               variant="outline"
               size="icon"
@@ -96,12 +97,12 @@ export default function TestimonialsSection() {
                 />
               </svg>
             </Button>
-          </div>
+          </div>}
         </div>
 
         {/* Testimonial Cards */}
-        <div className={`grid grid-cols-1 ${testimonials[currentSlide].length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-2"} gap-x-8 gap-y-20 mb-12`}>
-          {testimonials[currentSlide].map((testimonial) => (
+        <div className={`grid grid-cols-1 ${testimonials[preview ? 0 : currentSlide].length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-2"} gap-x-8 gap-y-20 mb-12`}>
+          {testimonials[preview ? 0 : currentSlide].map((testimonial) => (
             <div
               key={testimonial.name}
               className="bg-white rounded-2xl shadow-lg p-8 relative hover:shadow-xl transition-shadow"
@@ -143,7 +144,7 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Indicators */}
-        <div className="flex justify-center gap-3">
+        {!preview && <div className="flex justify-center gap-3">
           {testimonials.map((_, index) => (
             <button
               key={index}
@@ -154,7 +155,8 @@ export default function TestimonialsSection() {
               aria-label={`Go to testimonial slide ${index + 1}`}
             />
           ))}
-        </div>
+        </div>}
+        {preview && <div className="text-center"><Link href="/about#testimonials" className="inline-flex min-h-12 items-center rounded-lg border border-brand/25 px-6 py-3 font-semibold text-brand hover:bg-brand-50">More customer reviews</Link></div>}
       </div>
     </section>
   );

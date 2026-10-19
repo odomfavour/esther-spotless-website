@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Esther’s Spotless Touch",
   },
   description:
-    "Professional cleaning, laundry, fumigation and pest control in Uyo. Open every day. Your spotless space, our promise. Call 08147343027.",
+    "Professional cleaning, laundry, fumigation and pest control in Uyo. Open Monday–Saturday. Your spotless space, our promise. Call 08147343027.",
 };
 
 export default function RootLayout({

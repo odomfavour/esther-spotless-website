@@ -2,7 +2,7 @@ import { CalendarClock, FileCheck2, ShieldCheck, ThumbsUp } from "lucide-react";
 
 const items = [
   { icon: ShieldCheck, title: "Trusted professionals", text: "A cleaning team focused on careful work and respectful service." },
-  { icon: CalendarClock, title: "Flexible scheduling", text: "Choose the date and time that suits you, including evenings and weekends." },
+  { icon: CalendarClock, title: "Flexible scheduling", text: "Choose a preferred date and time, Monday–Saturday. We confirm availability with you." },
   { icon: FileCheck2, title: "Transparent quotations", text: "An itemised quote before you pay. No hidden charges." },
   { icon: ThumbsUp, title: "Quality service", text: "We check every job and make it right if something is missed." },
 ];

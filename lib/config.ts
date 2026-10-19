@@ -7,5 +7,5 @@ export const org = {
   whatsappUrl: "https://wa.me/2348147343027",
   email: "",
   address: "Uyo, Akwa Ibom State",
-  hours: "Open every day",
+  hours: "Open Monday–Saturday",
 };

@@ -86,7 +86,7 @@ export default function CTAFooterSection() {
           <div className="relative flex flex-col justify-center overflow-hidden bg-brand p-7 text-white sm:p-10 lg:p-12">
             <Sparkles aria-hidden="true" className="pointer-events-none absolute -right-5 -top-5 size-36 text-white/5" strokeWidth={1} />
             <div className="relative">
-              <p className="mb-3 inline-flex items-center gap-2 text-sm font-medium text-white/90"><span aria-hidden="true" className="size-2 rounded-full bg-brand-teal" />Open every day in Uyo</p>
+              <p className="mb-3 inline-flex items-center gap-2 text-sm font-medium text-white/90"><span aria-hidden="true" className="size-2 rounded-full bg-brand-teal" />Open Monday–Saturday in Uyo</p>
               <h3 className="text-2xl font-bold sm:text-3xl">Let’s plan your clean.</h3>
               <p className="mt-3 text-base leading-relaxed text-white/85">Tell us about your space and we’ll prepare a quotation tailored to you.</p>
               <div className="mt-7 flex flex-col gap-3">
@@ -152,7 +152,7 @@ export default function CTAFooterSection() {
                 {serviceCatalog.map(({ name: service }) => (
                   <li key={service}>
                     <a
-                      href="#services"
+                      href="/services#services"
                       className="text-white/70 hover:text-white transition-colors flex items-center gap-2 text-sm group"
                     >
                       <svg
@@ -228,7 +228,7 @@ export default function CTAFooterSection() {
                     <p className="text-white font-semibold mb-1">
                       <a href="tel:+2348147343027">08147343027</a>
                     </p>
-                    <p className="text-white/60">Open every day</p>
+                    <p className="text-white/60">Open Monday–Saturday</p>
                   </div>
                 </li>
                 <li className="flex gap-4">
@@ -303,17 +303,11 @@ export default function CTAFooterSection() {
           <div className="border-t border-white/10 pt-8 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/60">
             <p>© 2026 Esther’s Spotless Touch. All rights reserved.</p>
             <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-6">
-              <a href="#" className="hover:text-white transition-colors">
-                Setting & Privacy
-              </a>
+              <Link href="/request" className="hover:text-white transition-colors">Track Request</Link>
               <span>•</span>
-              <a href="#" className="hover:text-white transition-colors">
-                FAQ
-              </a>
+              <Link href="/contact#faq" className="hover:text-white transition-colors">FAQ</Link>
               <span>•</span>
-              <a href="#" className="hover:text-white transition-colors">
-                Support
-              </a>
+              <Link href="/contact" className="hover:text-white transition-colors">Support</Link>
             </div>
           </div>
         </div>

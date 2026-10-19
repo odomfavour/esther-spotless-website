@@ -1,7 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
-  { q: "Where do you operate, and when are you open?", a: "We offer professional cleaning services in Uyo, Akwa Ibom State, and are open every day. Call or WhatsApp 08147343027 to discuss your needs and preferred date." },
+  { q: "Where do you operate, and when are you open?", a: "We offer professional cleaning services in Uyo, Akwa Ibom State, and are open Monday–Saturday. Call or WhatsApp 08147343027 to discuss your needs and preferred date." },
   { q: "How do I request a cleaning?", a: "Create a free account, choose your type of space and the services you need, add details and photos, then pick a preferred date. It takes about five minutes." },
   { q: "Do I need to know the exact price before requesting?", a: "No. Requesting is free and you don't pay anything up front. We review your request and send an itemised quotation for you to approve." },
   { q: "How is the quotation determined?", a: "We look at the size and condition of the space, the services you selected, the time and team needed, and travel. For larger spaces we may inspect in person first." },

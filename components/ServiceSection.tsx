@@ -1,10 +1,11 @@
 "use client";
+import Link from "next/link";
 import { Building2, Bug, Droplets, HardHat, Home, Hotel, Leaf, PackageOpen, PartyPopper, Shirt } from "lucide-react";
 import { serviceCatalog } from "@/lib/service-catalog";
 
 const icons = [Home, PackageOpen, HardHat, Building2, Shirt, Bug, Hotel, PartyPopper, Leaf, Droplets];
 const services = serviceCatalog.map((service, index) => ({
-  icon: icons[index], title: service.name, desc: service.description,
+  code: service.code, icon: icons[index], title: service.name, desc: service.description,
 }));
 
 interface BubbleProps {
@@ -53,7 +54,8 @@ const Bubble = ({ size, left, delay, duration, top }: BubbleProps) => (
   </div>
 );
 
-export default function ServiceSection() {
+export default function ServiceSection({ preview = false }: { preview?: boolean }) {
+  const shownServices = preview ? services.filter(service => ["REGULAR", "OFFICE", "MOVE_IN"].includes(service.code)) : services;
   return (
     <>
       {/* Bubble Animation */}
@@ -85,7 +87,7 @@ export default function ServiceSection() {
         }
       `}</style>
 
-      <section id="services" className="relative bg-primary py-28 overflow-hidden scroll-mt-16">
+      <section id="services" className={`relative bg-primary ${preview ? "py-20" : "py-28"} overflow-hidden scroll-mt-16`}>
         {/* Floating Bubbles - Subtle and smaller */}
         <Bubble size="60px" left="3%" top="8%" delay="0s" duration="20s" />
         <Bubble size="45px" left="24%" top="15%" delay="3s" duration="22s" />
@@ -108,7 +110,7 @@ export default function ServiceSection() {
 
         {/* Services */}
         <div className="container mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-24 pt-12 px-6 max-w-7xl">
-          {services.map((svc) => (
+          {shownServices.map((svc) => (
             <div key={svc.title} className="group bg-white rounded-2xl shadow-xl p-8 pt-0 text-center relative transition-transform duration-300 hover:-translate-y-1">
               <div className="w-28 h-28 mx-auto -mt-14 rounded-full border-[6px] border-primary flex items-center justify-center bg-white shadow-lg">
                 <svc.icon className="w-12 h-12 text-brand-teal" strokeWidth={1.75} />
@@ -120,6 +122,10 @@ export default function ServiceSection() {
           ))}
         </div>
 
+        {preview && <div className="mt-10 flex flex-wrap justify-center gap-3 px-6">
+          <Link href="/services" className="inline-flex min-h-12 items-center justify-center rounded-lg bg-brand-yellow px-6 py-3 font-bold text-brand hover:bg-brand-yellow/90">View all services</Link>
+          <Link href="/pricing" className="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/50 px-6 py-3 font-semibold text-white hover:bg-white/10">See our price list</Link>
+        </div>}
         </section>
     </>
   );

@@ -105,7 +105,7 @@ const AboutSection = () => {
               </div>
             </div>
             <div>
-              <Button asChild className="mt-8 h-auto w-max px-8 py-3 shadow-lg hover:scale-105 hover:shadow-xl"><a href="#how-it-works">
+              <Button asChild className="mt-8 h-auto w-max px-8 py-3 shadow-lg hover:scale-105 hover:shadow-xl"><a href="/services#how-it-works">
                 See How It Works
               </a></Button>
             </div>
