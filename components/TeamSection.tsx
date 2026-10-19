@@ -9,30 +9,11 @@ interface TeamMember {
 
 export default function TeamSection() {
   const teamMembers: TeamMember[] = [
-    {
-      image:
-        "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop",
-      name: "Blessing Wali",
-      role: "House Cleaner",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
-      name: "Samuel Ikpe",
-      role: "Office Cleaner",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop",
-      name: "Joy Akpan",
-      role: "Window Cleaner",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop",
-      name: "Daniel Okoro",
-      role: "Window Cleaner",
-    },
+    { image: "/team/Esther-Udoka.jpeg", name: "Esther Udoka", role: "CEO" },
+    { image: "/team/Blessing-Essienekak.jpeg", name: "Blessing Essienekak", role: "Team Member" },
+    { image: "/team/Etinyene-Effiong.jpeg", name: "Etinyene Effiong", role: "Team Member" },
+    { image: "/team/Ngozi-Okereke.jpeg", name: "Ngozi Okereke", role: "Team Member" },
+    { image: "/team/Blessing-Jackson.jpeg", name: "Blessing Jackson", role: "Team Member" },
   ];
 
   return (
@@ -49,8 +30,8 @@ export default function TeamSection() {
           </h2>
         </div>
 
-        {/* Team Grid - 4 members static */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 mb-12">
+        {/* Team Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-12">
           {teamMembers.map((member, index) => (
             <div key={index} className="group relative">
               <div className="relative overflow-hidden rounded-2xl shadow-lg h-[450px]">
@@ -59,11 +40,11 @@ export default function TeamSection() {
                   alt={member.name}
                   fill
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, 25vw"
+                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 20vw"
                 />
 
                 {/* Hover Overlay with Social Icons */}
-                <div className="absolute inset-0 bg-brand/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="absolute inset-0 bg-brand/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <div className="flex gap-3">
                     {[
                       <path
