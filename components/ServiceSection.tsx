@@ -1,12 +1,24 @@
 "use client";
 import Link from "next/link";
-import { Building2, Bug, Droplets, HardHat, Home, Hotel, Leaf, PackageOpen, PartyPopper, Shirt } from "lucide-react";
+import Image from "next/image";
 import { serviceCatalog } from "@/lib/service-catalog";
 
-const icons = [Home, PackageOpen, HardHat, Building2, Shirt, Bug, Hotel, PartyPopper, Leaf, Droplets];
-const services = serviceCatalog.map((service, index) => ({
-  code: service.code, icon: icons[index], title: service.name, desc: service.description,
+const services = serviceCatalog.map((service) => ({
+  code: service.code, title: service.name, desc: service.description,
 }));
+
+const serviceImages: Record<string, { src: string; alt: string }> = {
+  REGULAR: { src: "/images/indoor-cleaning.jpg", alt: "Cleaner wiping a surface in a home" },
+  MOVE_IN: { src: "/images/services/move-in-cleaning.jpg", alt: "Empty apartment ready for new occupants" },
+  POST_CONSTRUCTION: { src: "/images/services/post-construction.jpg", alt: "Renovated room with construction materials awaiting cleanup" },
+  LAUNDRY: { src: "/images/services/laundry.jpg", alt: "Woman loading laundry into a washing machine" },
+  PEST_CONTROL: { src: "/images/services/pest-control.jpg", alt: "Worker fumigating a warehouse with a fogging machine" },
+  LODGES_HOSTEL: { src: "/images/services/lodges-hostel.jpg", alt: "Tidy guest bedroom with freshly made white bedding" },
+  AFTER_PARTY: { src: "/images/services/after-party.jpg", alt: "Cleaning staff clearing litter after an outdoor event" },
+  MOLD: { src: "/images/services/mold.jpg", alt: "Mildew stains on a wall requiring treatment" },
+  DISINFECTION: { src: "/images/services/disinfection.jpg", alt: "Cleaner in protective clothing disinfecting a table" },
+  OFFICE: { src: "/images/services/office-cleaning.jpg", alt: "Clean office meeting room with a table and chairs" },
+};
 
 interface BubbleProps {
   size: string;
@@ -109,15 +121,16 @@ export default function ServiceSection({ preview = false }: { preview?: boolean 
         </div>
 
         {/* Services */}
-        <div className="container mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-24 pt-12 px-6 max-w-7xl">
+        <div className="container mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 max-w-7xl">
           {shownServices.map((svc) => (
-            <div key={svc.title} className="group bg-white rounded-2xl shadow-xl p-8 pt-0 text-center relative transition-transform duration-300 hover:-translate-y-1">
-              <div className="w-28 h-28 mx-auto -mt-14 rounded-full border-[6px] border-primary flex items-center justify-center bg-white shadow-lg">
-                <svc.icon className="w-12 h-12 text-brand-teal" strokeWidth={1.75} />
-              </div>
+            <div key={svc.title} className="group bg-white rounded-2xl shadow-xl text-center relative overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+                <div className="relative aspect-[3/2] bg-gray-100">
+                  <Image src={serviceImages[svc.code].src} alt={serviceImages[svc.code].alt} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
+              <div className="px-8 pb-8">
               <h3 className="text-2xl font-bold mt-6 mb-3 text-primary">{svc.title}</h3>
               <p className="text-gray-600 leading-relaxed mb-6">{svc.desc}</p>
-
+              </div>
             </div>
           ))}
         </div>

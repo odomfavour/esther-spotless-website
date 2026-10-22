@@ -1,9 +1,28 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { Sparkles, Briefcase, Home } from "lucide-react";
 
-const AboutSection = () => {
+const AboutSection = ({ preview = false }: { preview?: boolean }) => {
+  if (preview) {
+    return (
+      <section id="about" aria-labelledby="about-heading" className="scroll-mt-16 bg-white py-16 sm:py-20">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 md:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <Image src="/images/indoor-cleaning.jpg" alt="Careful cleaning of a home interior" fill sizes="(min-width: 768px) 45vw, 100vw" className="object-cover" />
+          </div>
+          <div>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-brand-teal">About us</p>
+            <h2 id="about-heading" className="mb-5 text-3xl font-bold leading-tight text-primary sm:text-4xl">A personal touch for a spotless space</h2>
+            <p className="mb-4 leading-relaxed text-gray-600">At Esther’s Spotless Touch, we care for homes, offices and commercial spaces in Uyo with hands-on cleaning and attention to detail.</p>
+            <p className="mb-6 leading-relaxed text-gray-600">From everyday upkeep to a fresh start in a new space, we tailor each job to your needs, with a clear quotation before work begins.</p>
+            <Button asChild className="h-auto px-6 py-3"><Link href="/about">More about us</Link></Button>
+          </div>
+        </div>
+      </section>
+    );
+  }
   return (
     <div id="about" className="scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">

@@ -1,4 +1,5 @@
 import HeroSlider from "@/components/HeroSlider";
+import AboutSection from "@/components/AboutSection";
 import TrustSection from "@/components/landing/TrustSection";
 import ServiceSection from "@/components/ServiceSection";
 import TractionSection from "@/components/landing/TractionSection";
@@ -10,6 +11,7 @@ export default function Home() {
     <>
       <HeroSlider />
       <TrustSection />
+      <AboutSection preview />
       <ServiceSection preview />
       <TractionSection />
       <TeamSection preview />
